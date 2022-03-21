@@ -3,6 +3,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./rootReducer";
 
 const composeEnhancers = composeWithDevTools({});
-const store = createStore(rootReducer, composeEnhancers());
+
+const initialState = {
+    cartReducer: {
+        cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+    },
+};
+
+const store = createStore(rootReducer, initialState, composeEnhancers());
 
 export default store;

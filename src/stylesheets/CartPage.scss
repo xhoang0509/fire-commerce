@@ -1,0 +1,15 @@
+.total-amount {
+    background-color: #d2b48c;
+    padding: 10px;
+    border-radius: 50px;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #003f5c;
+        color: white;
+    }
+}
+
+.btn-delete-all {
+    cursor: pointer;
+}

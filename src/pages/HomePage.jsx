@@ -1,23 +1,31 @@
 import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
 
 HomePage.propTypes = {};
 
-function HomePage(props) {
+function HomePage() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const { cartItems } = useSelector((state) => state.cartReducer);
 
     useEffect(() => {
         handleGetProducts();
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }, [cartItems]);
+
     const handleGetProducts = async () => {
         try {
+            setLoading(true);
             const products = await getDocs(collection(fireDB, "products"));
-
             const productArray = [];
             products.forEach((product) => {
                 const obj = {
@@ -29,13 +37,22 @@ function HomePage(props) {
             });
 
             setProducts(productArray);
+            setLoading(false);
         } catch (error) {
             console.log("Failed to get user: ", error);
+            setLoading(false);
         }
     };
 
+    const handleAddToCart = (product) => {
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: product,
+        });
+    };
+
     return (
-        <Layout>
+        <Layout loading={loading}>
             <div className="container">
                 <div className="row">
                     {products.map((product) => (
@@ -54,7 +71,12 @@ function HomePage(props) {
                                 <div className="product__actions">
                                     <h2>{product.price}$</h2>
                                     <div className="d-flex">
-                                        <button className="mx-2">
+                                        <button
+                                            className="mx-2"
+                                            onClick={() =>
+                                                handleAddToCart(product)
+                                            }
+                                        >
                                             ADD TO CART
                                         </button>
                                         <button

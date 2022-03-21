@@ -9,13 +9,14 @@ ProductInfo.propTypes = {};
 function ProductInfo(props) {
     const params = useParams();
     const [product, setProduct] = useState([]);
-
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         handleGetProducts();
     }, []);
 
     const handleGetProducts = async () => {
         try {
+            setLoading(true);
             const product = await getDoc(
                 doc(fireDB, "products", params.productId)
             );
@@ -26,14 +27,15 @@ function ProductInfo(props) {
             };
 
             setProduct(obj);
+            setLoading(false);
         } catch (error) {
             console.log("Failed to get user: ", error);
         }
     };
     console.log(product);
-    
+
     return (
-        <Layout>
+        <Layout loading={loading}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-8">
