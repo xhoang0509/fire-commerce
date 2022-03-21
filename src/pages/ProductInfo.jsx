@@ -31,6 +31,7 @@ function ProductInfo(props) {
         }
     };
     console.log(product);
+    
     return (
         <Layout>
             <div className="container">
