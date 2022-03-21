@@ -5,7 +5,10 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ProductInfo from "./pages/ProductInfo";
 import RegisterPage from "./pages/RegisterPage";
-import './stylesheets/layout.scss';
+import "./stylesheets/layout.scss";
+import "./stylesheets/products.scss";
+import "./stylesheets/productInfo.scss";
+
 function App() {
     return (
         <div className="App">
@@ -15,7 +18,7 @@ function App() {
                     <Route path="/login" exact element={<LoginPage />} />
                     <Route path="/register" exact element={<RegisterPage />} />
                     <Route
-                        path="/productinfo"
+                        path="/productinfo/:productId"
                         exact
                         element={<ProductInfo />}
                     />

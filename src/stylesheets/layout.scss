@@ -35,3 +35,15 @@
     // left: 0;
     // right: 0;
 }
+
+button {
+    background-color: #003f5c;
+    box-shadow: none;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+
+    &:hover {
+        background-color: tomato;
+    }
+}
