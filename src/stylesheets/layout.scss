@@ -1,0 +1,37 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    .navbar {
+        background-color: #003f5c !important;
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .nav-link,
+        .navbar-brand,
+        .navbar-toggler-icon {
+            color: #fff !important;
+        }
+    }
+}
+
+.content {
+    padding-top: 80px;
+    min-height: 1000px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #003f5c;
+    color: white;
+    padding: 10px;
+
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+}
