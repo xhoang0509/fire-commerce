@@ -5,9 +5,6 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ProductInfo from "./pages/ProductInfo";
 import RegisterPage from "./pages/RegisterPage";
-import "./stylesheets/layout.scss";
-import "./stylesheets/products.scss";
-import "./stylesheets/productInfo.scss";
 
 function App() {
     return (

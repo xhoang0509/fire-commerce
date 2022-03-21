@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
-
+import "../stylesheets/Products.scss";
 HomePage.propTypes = {};
 
 function HomePage() {
