@@ -1,14 +1,14 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./stylesheets/cartPage.scss";
-import "./stylesheets/layout.scss";
-import "./stylesheets/loader.scss";
-import "./stylesheets/login.scss";
-import "./stylesheets/orderPage.scss";
-import "./stylesheets/product.scss";
-import "./stylesheets/productInfo.scss";
-import "./stylesheets/register.scss";
+import "./css/cartPage.scss";
+import "./css/layout.scss";
+import "./css/loader.scss";
+import "./css/login.scss";
+import "./css/orderPage.scss";
+import "./css/product.scss";
+import "./css/productInfo.scss";
+import "./css/register.scss";
 import "./App.css";
 
 import NotFound from "./components/NotFound";
