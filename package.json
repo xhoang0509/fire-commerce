@@ -21,6 +21,7 @@
         "react-toastify": "^8.2.0",
         "redux": "^4.1.2",
         "redux-devtools-extension": "^2.13.9",
+        "sass": "^1.49.9",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
@@ -46,8 +47,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "node-sass": "^7.0.1"
     }
 }
