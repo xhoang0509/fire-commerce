@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
-import "../stylesheets/CartPage.scss";
+
 CartPage.propTypes = {};
 
 function CartPage(props) {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
-import "../stylesheets/OrderPage.scss";
+
 OrderPage.propTypes = {};
 
 function OrderPage(props) {

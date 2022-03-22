@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/Layout.scss";
+
 import Footer from "./Footer";
 import Header from "./Header";
 import Loader from "./Loader";

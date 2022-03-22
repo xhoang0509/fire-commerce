@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../components/Loader";
-import "../stylesheets/Login.scss";
+
 LoginPage.propTypes = {};
 
 const auth = getAuth();

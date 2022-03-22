@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
-import "../stylesheets/ProductInfo.scss";
+
 ProductInfo.propTypes = {};
 
 function ProductInfo(props) {

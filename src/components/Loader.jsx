@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/Loader.scss";
+
 Loader.propTypes = {};
 
 function Loader(props) {

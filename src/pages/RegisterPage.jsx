@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../components/Loader";
-import "../stylesheets/Register.scss";
+
 
 RegisterPage.propTypes = {};
 const auth = getAuth();
