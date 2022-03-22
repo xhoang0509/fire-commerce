@@ -1,12 +1,15 @@
 import { doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
 import "../stylesheets/ProductInfo.scss";
 ProductInfo.propTypes = {};
 
 function ProductInfo(props) {
+    const dispatch = useDispatch();
     const params = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -32,7 +35,14 @@ function ProductInfo(props) {
             console.log("Failed to get user: ", error);
         }
     };
-    console.log(product);
+
+    const handleAddToCart = () => {
+        toast.success("You cool product is in the cart 🎉");
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: product,
+        });
+    };
 
     return (
         <Layout loading={loading}>
@@ -52,7 +62,9 @@ function ProductInfo(props) {
                                 <hr />
                                 <p>{product.description}</p>
                                 <div className="d-flex justify-content-end my-3">
-                                    <button>ADD TO CART</button>
+                                    <button onClick={handleAddToCart}>
+                                        ADD TO CART
+                                    </button>
                                 </div>
                             </div>
                         )}

@@ -1,13 +1,41 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Loader from "../components/Loader";
 import "../stylesheets/Login.scss";
 LoginPage.propTypes = {};
 
+const auth = getAuth();
 function LoginPage(props) {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleLogin = async () => {
+        try {
+            setLoading(true);
+            const result = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+            console.log("result: ", result);
+            localStorage.setItem("currentUser", JSON.stringify(result));
+            navigate("/");
+            setLoading(false);
+            toast.success("Login successfully !");
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+            toast.error("Login failed !");
+        }
+    };
     return (
         <div className="login">
+            {loading && <Loader />}
             <div className="row justify-content-center">
                 <div className="col-md-4 z1">
                     <div className="login__form p-4">
@@ -27,7 +55,7 @@ function LoginPage(props) {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <button>LOGIN</button>
+                        <button onClick={handleLogin}>LOGIN</button>
                         <hr />
                         <Link to="/register">Click here to Regsiter</Link>
                     </div>

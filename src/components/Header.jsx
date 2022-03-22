@@ -7,7 +7,13 @@ Header.propTypes = {};
 
 function Header(props) {
     const { cartItems } = useSelector((state) => state.cartReducer);
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const { user } = currentUser;
 
+    const handleLogout = () => {
+        localStorage.removeItem("currentUser");
+        window.onload();
+    };
     return (
         <div className="header">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,16 +40,23 @@ function Header(props) {
                                     aria-current="page"
                                     to="#"
                                 >
-                                    User
+                                    {user.email.substring(
+                                        0,
+                                        user.email.length - 10
+                                    )}
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">
+                                <Link className="nav-link" to="/order">
                                     Orders
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">
+                                <Link
+                                    className="nav-link"
+                                    to="#"
+                                    onClick={handleLogout}
+                                >
                                     Logout
                                 </Link>
                             </li>
