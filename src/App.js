@@ -8,7 +8,7 @@ import "./stylesheets/Login.scss";
 import "./stylesheets/OrderPage.scss";
 import "./stylesheets/Product.scss";
 import "./stylesheets/ProductInfo.scss";
-import "./stylesheets/register.scss";
+import "./stylesheets/Register.scss";
 import "./App.css";
 
 import NotFound from "./components/NotFound";
