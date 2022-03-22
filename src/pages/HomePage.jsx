@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
 import "../stylesheets/Products.scss";
+
 HomePage.propTypes = {};
 
 function HomePage() {
