@@ -1,4 +1,7 @@
 .products {
+    &:nth-child(even) {
+        background-color: aliceblue;
+    }
     &__price {
         color: #003f5c;
         font-size: 1.5rem;

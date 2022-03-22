@@ -18,6 +18,7 @@ import LoginPage from "./pages/LoginPage";
 import OrderPage from "./pages/OrderPage";
 import ProductInfo from "./pages/ProductInfo";
 import RegisterPage from "./pages/RegisterPage";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
     return (
@@ -52,7 +53,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/order"
+                        path="/orders"
                         exact
                         element={
                             <ProtectedRoutes>
@@ -60,6 +61,15 @@ function App() {
                             </ProtectedRoutes>
                         }
                     />
+                    <Route
+                    path="/admin"
+                    exact
+                    element={
+                        <ProtectedRoutes>
+                            <AdminPage />
+                        </ProtectedRoutes>
+                    }
+                />
 
                     <Route path="/login" exact element={<LoginPage />} />
                     <Route path="/register" exact element={<RegisterPage />} />
