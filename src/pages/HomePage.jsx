@@ -75,6 +75,8 @@ function HomePage() {
                         <option value="">All</option>
                         <option value="laptop">Laptop</option>
                         <option value="monitor">Monitor</option>
+                        <option value="cpu">CPU</option>
+                        <option value="keyboard">Keyboard</option>
                     </select>
                 </div>
                 <div className="row">

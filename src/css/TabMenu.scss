@@ -1,0 +1,14 @@
+.tabmenu {
+    & button {
+        font-size: 1rem;
+        font-weight: bold;
+        &:hover {
+            background-color: #ccc;
+        }
+    }
+    &__link {
+        &.active {
+            color: red;
+        }
+    }
+}

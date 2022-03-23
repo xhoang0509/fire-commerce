@@ -54,6 +54,7 @@ function ProductInfo(props) {
                                 <h3>
                                     <b>{product.name}</b>
                                 </h3>
+                                <h3>Price: {product.price}$</h3>
                                 <img
                                     src={product.imageURL}
                                     alt={product.name}

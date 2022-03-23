@@ -18,7 +18,7 @@ import LoginPage from "./pages/LoginPage";
 import OrderPage from "./pages/OrderPage";
 import ProductInfo from "./pages/ProductInfo";
 import RegisterPage from "./pages/RegisterPage";
-import AdminPage from "./pages/AdminPage";
+import AdminPage from "./pages/Admin";
 
 function App() {
     return (
@@ -62,14 +62,14 @@ function App() {
                         }
                     />
                     <Route
-                    path="/admin"
-                    exact
-                    element={
-                        <ProtectedRoutes>
-                            <AdminPage />
-                        </ProtectedRoutes>
-                    }
-                />
+                        path="/admin/*"
+                        exact
+                        element={
+                            <ProtectedRoutes>
+                                <AdminPage />
+                            </ProtectedRoutes>
+                        }
+                    />
 
                     <Route path="/login" exact element={<LoginPage />} />
                     <Route path="/register" exact element={<RegisterPage />} />

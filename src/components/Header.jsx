@@ -36,7 +36,7 @@ function Header(props) {
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
                                 <Link
-                                    className="nav-link active"
+                                    className="nav-link"
                                     aria-current="page"
                                     to="#"
                                 >
